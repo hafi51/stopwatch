@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">    <link rel="stylesheet" href="style.css">
+    <title>Stopwatch</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="stopwatch">
+            <section>
+                <!-- <div class="hours">
+                    <p>0</p>
+                </div> -->
+                <div class="hours">
+                    <p id="hours">0</p>
+                </div>
+            </section>
+            <h3>:</h3>
+            <section>
+                <!-- <div class="min">
+                    <p>0</p>
+                </div> -->
+                <div class="min">
+                    <p id="min">0</p>
+                </div>
+            </section>
+            <h3>:</h3>
+            <section>
+                <!-- <div class="sec">
+                    <p>0</p>
+                </div> -->
+                <div class="sec">
+                    <p id="sec">0</p>
+                </div>
+            </section>
+            <br>
+
+        </div>
+        <div class="buttons">
+            <!-- <div class="pause">
+                <button class="btn" onclick="pause()">|| </button>
+            </div> -->
+            <div class="start">
+                <button class="btn" id="start" onclick="start();"> <i class="fas fa-play"></i></button>
+            </div>
+            <div class="reset">
+                <button class="btn" onclick="reset()"><i class="fas fa-undo-alt"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
