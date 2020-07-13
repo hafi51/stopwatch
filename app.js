@@ -49,3 +49,8 @@ function reset() {
     hrsHead.innerHTML = '0';
     stop();
 }
+var click = new Audio();
+click.src = "click.mp3"
+function clicker(){
+    click.play()
+}
