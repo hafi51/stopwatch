@@ -1,38 +1,41 @@
 //alert("Due to ongoing exams can't complete at the moment")
-var hour = 0;
 var min = 0;
 var sec = 0;
-var hrsHead = document.getElementById('hours');
+var msec = 0;
 var minHead = document.getElementById('min');
 var secHead = document.getElementById('sec');
+var msecHead = document.getElementById('msec');
 
 function timer() {
-    sec++;
-    secHead.innerHTML = sec;
-    if (sec >= 59) {
+    msec++;
+    msecHead.innerHTML = msec;
+    if (msec >= 99) {
+        sec++;
+        secHead.innerHTML = sec;
+        msec = 0;
+    } else if (sec >= 59) {
+
+        sec = 0;
         min++;
         minHead.innerHTML = min;
-        sec = 0;
-    } else if (min >= 59) {
-        hour++;
-        min = 0;
-        hrsHead.innerHTML = hour;
     }
     playAudio()
 }
 
 function start() {
-    interval = setInterval(timer, 1000);
+    interval = setInterval(timer, 10);
     document.getElementById('start').onclick = stop;
     document.getElementById('start').innerHTML = '<i class="fas fa-stop"></i>'
 }
 var tick = new Audio("tick.mp3");
-function playAudio(){
+
+function playAudio() {
     tick.play()
 }
-function pause(){
+
+function pause() {
     clearInterval(interval);
-} 
+}
 
 function stop() {
     clearInterval(interval);
@@ -41,16 +44,17 @@ function stop() {
 }
 
 function reset() {
-    hour = 0;
     min = 0;
     sec = 0;
+    msec = 0;
+    msecHead.innerHTML = '0';
     secHead.innerHTML = '0';
     minHead.innerHTML = '0';
-    hrsHead.innerHTML = '0';
     stop();
 }
 var click = new Audio();
 click.src = "click.mp3"
-function clicker(){
+
+function clicker() {
     click.play()
 }
